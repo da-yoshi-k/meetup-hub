@@ -14,7 +14,7 @@ jobs:
         working-directory: .
     services:
       db:
-        image: postgres:11
+        image: postgres:16
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password

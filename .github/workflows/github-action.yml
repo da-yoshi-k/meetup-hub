@@ -46,6 +46,7 @@ jobs:
         env:
           RAILS_ENV: test
         run: |
+          cp config/database.yml.ci config/database.yml
           bundle exec rails db:create db:schema:load --trace
 
       - name: Run RSpec

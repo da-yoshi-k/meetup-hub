@@ -1,6 +1,20 @@
-<div class="container mx-auto px-4 bg-gray-100">
+<div class="container mx-auto px-4 py-4 bg-gray-100">
   <header class="text-center my-12">
     <h1 class="text-4xl font-bold text-gray-800 mb-4">Meetup Hub</h1>
     <p class="text-xl text-gray-600">みんなで集まるちょうどいい場所を探そう！</p>
   </header>
+  <% if logged_in? %>
+    <div class="text-center">
+      <%= link_to 'ログアウト', logout_path, class: 'inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded', data: { turbo_method: :delete } %>
+    </div>
+  <% else %>
+    <div class="flex justify-center gap-x-4">
+      <div class="text-center">
+        <%= link_to 'ログイン', login_path, class: 'inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded' %>
+      </div>
+      <div class="text-center">
+        <%= link_to '新規登録', new_user_path, class: 'inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded' %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,8 +1,6 @@
 name: Ruby on Rails CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -41,6 +39,7 @@ jobs:
           sudo apt-get install libpq-dev
           gem install bundler
           bundle install
+          bundle exec rake assets:precompile
 
       - name: Set up database
         env:

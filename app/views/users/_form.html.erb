@@ -1,18 +1,19 @@
 <%= form_with model: @user, local: true do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+	<div class="space-y-4">
+    <div class="field">
+      <%= f.label :email, class: "mb-2 text-sm" %><br />
+      <%= f.text_field :email, placeholder: "meetup-hub@example.com", class: "w-full px-3 py-2 border rounded-md" %>
+    </div>
+    <div class="field">
+      <%= f.label :password, class: "mb-2 text-sm" %><br />
+      <%= f.password_field :password, placeholder: "********", class: "w-full px-3 py-2 border rounded-md" %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "mb-4 text-sm" %><br />
+      <%= f.password_field :password_confirmation, placeholder: "********", class: "w-full px-3 py-2 border rounded-md"  %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "新規登録" %>
+  <div class="actions mt-8">
+    <%= f.submit "新規登録", class: "w-full inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded" %>
   </div>
 <% end %>
-

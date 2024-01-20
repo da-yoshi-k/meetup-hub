@@ -7,3 +7,6 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード（確認）"
+  errors:
+    messages:
+      invalid_login: "メールアドレスまたはパスワードが正しくありません。"

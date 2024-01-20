@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path
     else
-      @errors = ['メールアドレスまたはパスワードが間違っています。']
+      @errors = [t('errors.messages.invalid_login')]
       render :new, status: :unprocessable_entity
     end
   end

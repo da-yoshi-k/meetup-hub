@@ -28,9 +28,9 @@ RSpec.describe 'Users', type: :request do
     end
 
     context 'パラメータが不正な場合' do
-      it 'リクエストが成功すること' do
+      it 'リクエストが失敗すること' do
         post users_path, params: { user: attributes_for(:user, email: '') }
-        expect(response.status).to eq 200
+        expect(response.status).to eq 422
       end
 
       it 'ユーザーが登録されないこと' do

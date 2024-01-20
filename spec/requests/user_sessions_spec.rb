@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSessions', type: :request do
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, password: 'password') }
   describe 'GET /new' do
     it 'HTTPステータスが200であること' do
       get login_path
@@ -12,15 +12,15 @@ RSpec.describe 'UserSessions', type: :request do
   describe 'POST /create' do
     context 'パラメータが妥当な場合' do
       it 'リクエストが成功すること' do
-        post login_path, params: { email: user.email, password: user.password }
-        expect(response.status).to eq 200
+        post login_path, params: { email: user.email, password: 'password' }
+        expect(response.status).to eq 302
       end
     end
 
     context 'パラメータが不正な場合' do
-      it 'リクエストが成功すること' do
+      it 'リクエストが失敗すること' do
         post login_path, params: { email: '', password: '' }
-        expect(response.status).to eq 200
+        expect(response.status).to eq 422
       end
     end
   end

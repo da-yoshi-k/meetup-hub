@@ -31,8 +31,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_162233) do
     t.integer "max_participants", null: false
     t.string "priority_condition", null: false
     t.integer "status", default: 0, null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +48,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_162233) do
 
   add_foreign_key "event_participants", "events"
   add_foreign_key "event_participants", "users"
+  add_foreign_key "events", "users"
 end

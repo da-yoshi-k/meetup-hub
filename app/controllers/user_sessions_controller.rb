@@ -6,6 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
+      flash[:success] = t '.success'
       redirect_back_or_to root_path
     else
       @errors = [t('errors.messages.invalid_login')]
@@ -15,6 +16,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
+    flash[:success] = t '.success'
     redirect_to root_path, status: :see_other
   end
 end

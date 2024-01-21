@@ -1,0 +1,30 @@
+ja:
+  defaults:
+    login: "ログイン"
+    register: "登録"
+    show: "詳細"
+    edit: "編集"
+    delete: "削除"
+    submit: "送信"
+    logout: "ログアウト"
+    create: "登録する"
+    message:
+      require_login: "ログインしてください"
+      delete_confirm: "削除しますか？"
+      not_authorized: "権限がありません"
+  time:
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+  users:
+    create:
+      success: "ユーザー登録が完了しました"
+      fail: "ユーザー登録に失敗しました"
+  user_sessions:
+    new:
+      title: "ログイン"
+    create:
+      success: "ログインしました"
+    destroy:
+      success: "ログアウトしました"

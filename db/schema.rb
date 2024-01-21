@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_162233) do
 
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
+    t.string "purpose", null: false
     t.string "description"
     t.integer "max_participants", null: false
     t.string "priority_condition", null: false

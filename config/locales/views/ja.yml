@@ -28,3 +28,10 @@ ja:
       success: "ログインしました"
     destroy:
       success: "ログアウトしました"
+  events:
+    create:
+      success: "イベント登録が完了しました"
+    update:
+      success: "イベント編集が完了しました"
+    destroy:
+      success: "イベント削除が完了しました"

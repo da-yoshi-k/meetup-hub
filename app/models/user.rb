@@ -7,4 +7,10 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :email, presence: true
+
+  has_many :events, dependent: :destroy
+
+  def own?(obj)
+    id == obj.user_id
+  end
 end

@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   validates :title, presence: true
   validates :purpose, presence: true
-  validates :max_participants, presence: true
+  validates :max_participants, presence: true, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 8 }
   validates :priority_condition, presence: true
   validates :status, presence: true
 

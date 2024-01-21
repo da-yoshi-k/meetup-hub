@@ -4,6 +4,9 @@
     <p class="text-xl text-gray-600">みんなで集まるちょうどいい場所を探そう！</p>
   </header>
   <% if logged_in? %>
+    <div class="text-center mb-4">
+      <%= link_to 'イベント一覧', events_path, class: 'inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded' %>
+    </div>
     <div class="text-center">
       <%= link_to 'ログアウト', logout_path, class: 'inline-block bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded', data: { turbo_method: :delete } %>
     </div>

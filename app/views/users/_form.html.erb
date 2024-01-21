@@ -1,5 +1,4 @@
 <%= form_with model: @user, local: true do |f| %>
-  <%- pp @user&.errors.full_messages %>
   <% if @user.errors.present? %>
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-6 rounded relative" role="alert">
       <strong class="font-bold">登録に失敗しました。<br></strong>

@@ -25,6 +25,8 @@ class EventsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to event_path(@event), status: :see_other
     else
+      set_priority_conditions
+      set_purpose_options
       render :new, status: :unprocessable_entity
     end
   end
@@ -36,6 +38,8 @@ class EventsController < ApplicationController
       redirect_to event_path(event), status: :see_other
     else
       @event = event
+      set_priority_conditions
+      set_purpose_options
       render :edit, status: :unprocessable_entity
     end
   end
@@ -50,7 +54,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :purpose, :description, :max_participants, :priority_condition)
+    params.require(:event).permit(:title, :purpose, :location, :description, :max_participants, :priority_condition)
   end
 
   def set_purpose_options

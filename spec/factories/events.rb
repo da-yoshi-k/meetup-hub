@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :event do
     title { Faker::Lorem.word }
+    purpose { Faker::Lorem.word }
     description { Faker::Lorem.paragraph }
     location { Faker::Address.city }
     max_participants { 6 }

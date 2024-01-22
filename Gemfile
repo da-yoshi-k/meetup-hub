@@ -52,6 +52,8 @@ gem 'sorcery'
 
 # i18n
 gem 'rails-i18n', '~> 7.0.0'
+
+# Enum
 gem 'enum_help'
 
 group :development, :test do

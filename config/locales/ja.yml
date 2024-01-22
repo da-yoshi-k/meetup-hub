@@ -15,6 +15,13 @@ ja:
         max_participants: "最大参加人数"
         priority_condition: "優先する条件"
         status: "状態"
+  enums:
+    event:
+      status:
+        open: "募集中"
+        waiting: "候補作成中"
+        created: "候補作成済み"
+        closed: "募集終了"
   errors:
     messages:
       invalid_login: "メールアドレスまたはパスワードが正しくありません。"

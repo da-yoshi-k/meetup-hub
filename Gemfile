@@ -52,6 +52,7 @@ gem 'sorcery'
 
 # i18n
 gem 'rails-i18n', '~> 7.0.0'
+gem 'enum_help'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration[7.1]
       t.string :title, null: false
       t.string :purpose, null: false
       t.string :description
+      t.string :location
       t.integer :max_participants, null: false
       t.string :priority_condition, null: false
       t.integer :status, null: false, default: 0

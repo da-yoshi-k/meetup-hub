@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_162233) do
     t.string "title", null: false
     t.string "purpose", null: false
     t.string "description"
+    t.string "location"
     t.integer "max_participants", null: false
     t.string "priority_condition", null: false
     t.integer "status", default: 0, null: false

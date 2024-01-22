@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :event_participant do
-    user { nil }
-    event { nil }
+    association :user
+    association :event
     location { Faker::Address.city }
   end
 end

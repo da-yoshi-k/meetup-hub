@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   validates :priority_condition, presence: true
   validates :status, presence: true
 
-  enum status: { open: 0, closed: 1 }
+  enum status: { open: 0, waiting: 1, created: 2, decided: 3 }
 
   has_many :event_participants, dependent: :destroy
   belongs_to :user

@@ -12,6 +12,7 @@ ja:
         title: "イベント名"
         purpose: "イベントの目的"
         description: "説明"
+        location: "優先する場所"
         max_participants: "最大参加人数"
         priority_condition: "優先する条件"
         status: "状態"

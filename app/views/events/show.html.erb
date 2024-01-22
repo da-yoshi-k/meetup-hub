@@ -8,6 +8,7 @@
     <% end %>
   <p class="text-gray-600 mb-2">イベントの目的: <%= @event.purpose %></p>
   <p class="text-gray-600 mb-2">説明: <%= @event.description.present? ? @event.description : "なし" %></p>
+  <p class="text-gray-600 mb-2">優先する場所: <%= @event.location.present? ? @event.location : "なし" %></p>
   <p class="text-gray-600 mb-2">最大参加人数: <%= @event.max_participants %></p>
   <p class="text-gray-600 mb-2">優先する: <%= @event.priority_condition %></p>
   <p class="text-gray-600 mb-2">ステータス: <%= @event.status_i18n %></p>

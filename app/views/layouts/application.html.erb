@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>MeetupHub</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,7 +20,9 @@
   </head>
 
   <body>
-    <main class="flex justify-center content-center mt-28 px-5 w-screen">
+    <%= render 'layouts/flash' %>
+    <%= render "layouts/header" %>
+    <main class="flex justify-center content-center mt-14 px-5 w-screen">
       <%= yield %>
     </main>
   </body>

@@ -1,0 +1,54 @@
+<%= form_with(model: event, local: true) do |form| %>
+    <% if @event.errors.present? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-6 rounded relative" role="alert">
+      <strong class="font-bold">登録に失敗しました。<br></strong>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :title, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :purpose, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :purpose, list: "purpose-options", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <datalist id="purpose-options">
+      <% @purpose_options .each do |option| %>
+        <option value="<%= option %>">
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :description, "#{Event.human_attribute_name(:description)}(任意)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_area :description, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :location, "#{Event.human_attribute_name(:location)}(任意)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :location, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :max_participants, "#{Event.human_attribute_name(:max_participants)}（2〜8人）", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.number_field :max_participants, in: 2..8, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :priority_condition, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :priority_condition, list: "priority-conditions", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <datalist id="priority-conditions">
+        <% @priority_conditions.each do |option| %>
+          <option value="<%= option %>">
+        <% end %>
+      </datalist>
+    </div>
+
+  <div class="flex items-center justify-center">
+    <%= form.submit "登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>

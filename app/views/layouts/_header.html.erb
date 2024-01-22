@@ -1,0 +1,25 @@
+<% if logged_in? %>
+  <nav class="bg-blue-100 flex items-center h-16">
+    <div class="ml-4">
+      <%= link_to 'Meetup Hub', root_path, class: "text-black text-2xl mr-8 font-bold" %>
+    </div>
+    <div class="mr-4">
+      <%= link_to 'イベント一覧', events_path, class: "text-blue-800 font-bold" %>
+    </div>
+    <div class="ml-auto mr-4">
+      <%= link_to 'ログアウト', logout_path, class: "text-blue-800 font-bold", data: { turbo_method: :delete } %>
+    </div>
+  </nav>
+<% else %>
+  <nav class="bg-blue-100 flex items-center h-16">
+    <div class="ml-4">
+      <%= link_to 'Meetup Hub', root_path, class: "text-black text-2xl mr-8 font-bold" %>
+    </div>
+    <div class="mr-4">
+      <%= link_to 'イベント一覧', events_path, class: "text-blue-800 font-bold" %>
+    </div>
+    <div class="ml-auto mr-4">
+      <%= link_to 'ログイン', login_path, class: "text-blue-800 font-bold" %>
+    </div>
+  </nav>
+<% end %>

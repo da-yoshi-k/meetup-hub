@@ -1,0 +1,25 @@
+<div class="flex flex-col w-full max-w-lg p-6 rounded-md sm:p-10 bg-gray-100">
+  <% if logged_in? %>
+    <%= link_to "新規", new_event_path, class: "w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  <% end %>
+  <h1 class="text-4xl font-bold text-center my-6">イベント</h1>
+
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">タイトル</th>
+        <th class="px-4 py-2">主催者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td class="px-4 py-2 text-center"><%= event.id %></td>
+          <td class="px-4 py-2 text-center"><%= link_to event.title, event_path(event), class: "text-blue-500 hover:underline" %></td>
+          <td class="px-4 py-2 text-center"><%= event.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

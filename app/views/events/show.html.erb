@@ -1,0 +1,17 @@
+<div class="flex flex-col w-full max-w-lg p-6 rounded-md sm:p-10 bg-gray-100">
+  <div class="flex items-center gap-4 mb-4">
+    <h1 class="text-2xl font-bold"><%= @event.title %></h1>
+    <% if current_user&.own?(@event) %>
+        <%= link_to "編集", edit_event_path(@event), class: "ml-auto w-20 bg-amber-500 hover:bg-amber-700 text-white text-center font-bold py-2 px-4 rounded" %>
+        <%= button_to "削除", event_path(@event), method: :delete, data: { turbo_confirm: "削除しても良いですか?" }, class: "w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+      </div>
+    <% end %>
+  <p class="text-gray-600 mb-2">イベントの目的: <%= @event.purpose %></p>
+  <p class="text-gray-600 mb-2">説明: <%= @event.description.present? ? @event.description : "なし" %></p>
+  <p class="text-gray-600 mb-2">優先する場所: <%= @event.location.present? ? @event.location : "なし" %></p>
+  <p class="text-gray-600 mb-2">最大参加人数: <%= @event.max_participants %></p>
+  <p class="text-gray-600 mb-2">優先する: <%= @event.priority_condition %></p>
+  <p class="text-gray-600 mb-2">ステータス: <%= @event.status_i18n %></p>
+
+  <%= link_to '一覧に戻る', events_path, class: 'text-blue-500 hover:underline' %>
+</div>
